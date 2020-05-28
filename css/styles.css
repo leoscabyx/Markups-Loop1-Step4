@@ -1,0 +1,107 @@
+@charset "UTF-8";
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif; }
+
+.card {
+  width: 350px; }
+  .card__header {
+    background-color: #6a96d8;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .card__titulo {
+    font-size: 0.9rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+    .card__titulo::before {
+      content: "•";
+      width: 1em;
+      margin-right: 10px;
+      font-size: 1rem; }
+  .card__close {
+    cursor: pointer; }
+  .card__chat {
+    padding: 1.2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid #f1f1f1; }
+  .card__body {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    flex: 1 0 200px;
+    position: relative; }
+    .card__body::before {
+      content: 'today';
+      position: absolute;
+      background-color: #fff;
+      color: #cccccc;
+      top: -10px;
+      padding: 0 1rem;
+      left: 50%;
+      transform: translateX(-50%); }
+  .card__form {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between; }
+  .card__input {
+    border: none;
+    cursor: pointer; }
+    .card__input:focus {
+      outline: none; }
+  .card__btn {
+    margin-left: auto;
+    border: none;
+    background-color: transparent;
+    color: #6a96d8;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer; }
+    .card__btn:focus {
+      outline: none; }
+
+.mensaje {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 12px;
+  padding: 1rem 0; }
+  .mensaje:nth-child(even) {
+    align-items: flex-end; }
+    .mensaje:nth-child(even) .mensaje__parrafo {
+      background-color: #6ac7d865; }
+      .mensaje:nth-child(even) .mensaje__parrafo::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -10px;
+        border-left: 10px solid #6ac7d865;
+        border-top: 5px solid transparent;
+        border-bottom: 2px solid transparent; }
+  .mensaje:nth-child(odd) .mensaje__parrafo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border-right: 10px solid #6a96d865;
+    border-top: 5px solid transparent;
+    border-bottom: 2px solid transparent; }
+  .mensaje__hora {
+    margin-bottom: 5px;
+    color: #cccccc; }
+  .mensaje__parrafo {
+    padding: 1rem;
+    font-weight: 600;
+    border-radius: 2px;
+    background-color: #6a96d865;
+    width: 80%;
+    position: relative; }
